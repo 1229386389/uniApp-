@@ -50,13 +50,13 @@
                 }
                 ,{
                     "path" : "goods_list/goods_list",
-                    "style" :                                                                                    
+			   "style" :
                 {
                     "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
+                    "enablePullDownRefresh": true,
+					 "onReachBottomDistance": 150
                 }
-                
-                }
+				}
                 ,{
                     "path" : "search/search",
                     "style" :                                                                                    
@@ -103,5 +103,8 @@
 			        "selectedIconPath": "static/tab_icons/my-active.png"
 			      }
 		]
-	}
+	},
+	"requiredPrivateInfos": [
+		"chooseAddress"
+	]
 }

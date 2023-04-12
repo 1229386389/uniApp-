@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import BarBadge from '@/mixins/tabbar-badge.js.js'
 	export default {
 		data() {
 			return {
@@ -77,7 +78,8 @@
 				  })
 				this.floorList = res.message
 			}
-		}
+		},
+		mixins: [BarBadge]
 	}
 </script>
 

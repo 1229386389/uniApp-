@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import BarBadge from '@/mixins/tabbar-badge.js.js'
   export default {
     data() {
       return {
@@ -71,7 +72,8 @@
 				url: '/subpkg/search/search'
 			})
 		}
-	}
+	},
+	mixins: [BarBadge]
   }
 </script>
 
