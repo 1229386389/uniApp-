@@ -65,7 +65,8 @@ import { mapState, mapMutations } from 'vuex'
 			swipeActionClickHandler(goods){ // 点击了滑动事件后
 			    // 删除指定商品
 				this.deleteCart(goods.goods_id)
-			}
+			},
+			
 		}
 	}
 </script>

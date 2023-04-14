@@ -51,8 +51,11 @@ import { mapMutations, mapState, mapGetters } from 'vuex'
 					  this.updateAddress(success)
 				    }
 				// 3. 用户没有授权
-				  if (err && err.errMsg === 'chooseAddress:fail auth deny' || err.errMsg === 'chooseAddress:fail authorize no response') {
-				    this.reAuth() // 调用 this.reAuth() 方法，向用户重新发起授权申请
+				  if (err) {
+					 if(err.errMsg === 'chooseAddress:fail auth deny' || err.errMsg === 'chooseAddress:fail authorize no response'){
+						   this.reAuth() // 调用 this.reAuth() 方法，向用户重新发起授权申请
+					  }
+				   
 				  }
 			}
 		},

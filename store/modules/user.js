@@ -2,17 +2,32 @@ export default {
 	namespaced: true,
 	 // 模块的 state 数据
 	  state: () => ({
-	    address: JSON.parse(uni.getStorageSync('address') || '{}')
+	    address: JSON.parse(uni.getStorageSync('address') || '{}'),
+		token: uni.getStorageSync('token') || '',
+		userInfo: JSON.parse(uni.getStorageSync('userInfo') || '{}')
 	  }),
 	  // 模块的 mutations 方法
 	  mutations: {
 		  updateAddress(state, address){ // 更新地址
 			  state.address = address
-			  this.commit('user/saveToStorage')
+			  this.commit('user/saveToLocal', 'address')
 		  },
-		  saveToStorage(state){ // 本地化存储
-			   uni.setStorageSync('address', JSON.stringify(state.address))
+		  updateUserInfo(state, userInfo){ // 保存用户信息
+			  state.userInfo = userInfo
+			  this.commit('user/saveToLocal', 'userInfo')
 		  },
+		  updateToken(state, token){
+			  state.token = token
+			  this.commit('user/saveToLocal', 'token')
+		  },
+		  saveToLocal(state, title){ // 本地化存储地址
+		       if(typeof state[title] === 'object'){ // 对象就转换成json格式存储
+				   uni.setStorageSync(title, JSON.stringify(state[title]))
+			   } else {
+				   uni.setStorageSync(title, state[title])
+			   }
+			   
+		  }
 	  },
 	  // 模块的 getters 属性
 	  getters: {

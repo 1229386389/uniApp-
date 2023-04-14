@@ -116,7 +116,7 @@ try {
       return __webpack_require__.e(/*! import() | components/my-good/my-good */ "components/my-good/my-good").then(__webpack_require__.bind(null, /*! @/components/my-good/my-good.vue */ 133))
     },
     mySettle: function () {
-      return __webpack_require__.e(/*! import() | components/my-settle/my-settle */ "components/my-settle/my-settle").then(__webpack_require__.bind(null, /*! @/components/my-settle/my-settle.vue */ 140))
+      return Promise.all(/*! import() | components/my-settle/my-settle */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/my-settle/my-settle")]).then(__webpack_require__.bind(null, /*! @/components/my-settle/my-settle.vue */ 140))
     },
   }
 } catch (e) {
