@@ -101,9 +101,6 @@ try {
     myInfo: function () {
       return Promise.all(/*! import() | components/my-info/my-info */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/my-info/my-info")]).then(__webpack_require__.bind(null, /*! @/components/my-info/my-info.vue */ 147))
     },
-    myLogin: function () {
-      return Promise.all(/*! import() | components/my-login/my-login */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/my-login/my-login")]).then(__webpack_require__.bind(null, /*! @/components/my-login/my-login.vue */ 154))
-    },
   }
 } catch (e) {
   if (
